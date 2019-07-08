@@ -9,6 +9,11 @@ export default class App extends Component {
         api.upvote(id) ;
         this.setState({});
     };
+    addNewsItem = (title, author, link) => {
+        api.add(title, author, link);
+        this.setState({});
+      };
+      incr
     render() {
         let posts = _.sortBy(api.getAll(), post => -post.upvotes);
         return (
@@ -21,7 +26,7 @@ export default class App extends Component {
             </div>
             <div className="row">
                 <div className="col-md-4 ">
-                    <Form />
+                    <Form handleAdd={this.addNewsItem} />
                 </div>
                 <div className="col-md-8">
                     <NewsList posts={posts} upvoteHandler={this.incrementUpvote}/>

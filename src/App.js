@@ -24,11 +24,9 @@ export default class App extends Component {
                     <Form />
                 </div>
                 <div className="col-md-8">
-                    <NewsList posts={posts} />
+                    <NewsList posts={posts} upvoteHandler={this.incrementUpvote}/>
                 </div>
-            </div>    
-            <NewsList posts={posts} 
-            upvoteHandler={this.incrementUpvote} />
+            </div> 
         </div>    
         </div>    
         );
